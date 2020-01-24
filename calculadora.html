@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="PT-Br">
+<head>
+	<title> Calculadora </title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+
+<style>
+	body {
+	background-color: #cccccc;
+	}
+</style>	
+	
+	
+</head>
+
+<body>
+<center> <h1>
+ 
+ 1.  <a href="calculadora.html"> Calculadora </a>         2. <a href="conversor.html"> Conversor de moedas </a>          3. <a href="base.html"> Conversor de bases </a>         4. <a href="ajuda.html"> Ajuda </a>
+ </h1> </center>
+
+ <br/> <br/> <br/>
+
+	<div class="container">
+<header>
+			<h1 align="center">  Calculadora </h1>
+</header><br>
+		
+<section>
+
+<center>
+
+<div>
+<div>
+
+					<label>Valor 1:</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;<label>Valor 2:</label><br>
+					<input id="caixa1" type="number" size="20" maxlength="8">
+					<select id="opc">
+					  	<option value="+">+</option>
+					  	<option value="-">-</option>
+					  	<option value="*">*</option>
+					  	<option value="/">/</option>
+					  	<option value="%">mod</option>
+					</select>
+					<input id="caixa2" type="number" size="20" maxlength="8">
+				</div>
+			</div><br>
+				<script type="text/javascript">
+
+				</script>
+  			<div/>
+  			<label>Resultado:</label>
+				<input type="number" id="resultado">
+				<input type="button" value="limpar" onclick="botao_limpar()">
+				<input type="button" value="executar" onclick="botao_executar()">
+				<script type="text/javascript">
+				
+</center>
+
+					function botao_limpar(){				
+						document.getElementById("caixa1").value = null;
+						document.getElementById("caixa2").value = null;
+						document.getElementById("opc").value = null;
+						document.getElementById("resultado").value = null;
+
+						var aux = document.getElementsById("RadioOps");
+						for (var i = 0; i < aux.length; i++) {
+							if (aux[i].checked) {
+								document.getElementsByName("RadioOps")[i].checked = false;
+							}
+						}
+					}
+					function botao_executar(){
+						var valorA = document.getElementById("caixa1").value;
+						var valorB = document.getElementById("caixa2").value;
+						var sinal = document.getElementById("opc").value;
+						var rdValue = document.getElementsByName("RadioOps");
+						for (var i = 0; i < rdValue.length; i++) {
+							if(rdValue[i].checked){
+								value_aux = document.getElementsByName("RadioOps")[i].value;
+							}
+						}
+						switch(sinal){
+							case "+":
+								valorA = parseInt(valorA);
+								valorB = parseInt(valorB);
+								var resultado = valorA + valorB;
+								document.getElementById("resultado").value = resultado;
+								break;
+							case "-":
+								valorA = parseInt(valorA);
+								valorB = parseInt(valorB);
+								var resultado = valorA - valorB;
+								document.getElementById("resultado").value = resultado;
+								break;
+							case "*":
+								valorA = parseInt(valorA);
+								valorB = parseInt(valorB);
+								var resultado = valorA * valorB;
+								document.getElementById("resultado").value = resultado;
+								break;
+							case "/":
+								valorA = parseInt(valorA);
+								valorB = parseInt(valorB);
+								var resultado = valorA / valorB;
+								document.getElementById("resultado").value = resultado;
+								break;
+							case "%":
+								valorA = parseInt(valorA);
+								valorB = parseInt(valorB);
+								var resultado = valorA % valorB;
+								document.getElementById("resultado").value = resultado;
+								break;
+							case "":
+								alert('Escolha a operação antes de executar o calculo!')
+								break;
+						}
+
+					}
+				</script>
+		</section>
+		<footer align="center">
+			<br><br>
+			
+		</footer>
+	</div>
+
+</body>
+</html>

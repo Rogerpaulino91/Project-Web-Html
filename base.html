@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="PT-Br">
+<head>
+	<title>.: calculadora de base :.</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+	
+
+
+</head>
+
+<body>
+
+	
+	<center> <h1>
+ 1.  <a href="calculadora.html"> Calculadora </a>         2. <a href="conversor.html"> Conversor de moedas </a>          3. <a href="base.html"> Conversor de bases </a>     4. <a href="ajuda.html"> Ajuda </a>
+ </h1> </center>
+
+ <br/> <br/> <br/>
+ 
+	<div class="container">
+		<header>
+			
+		</header><br>
+		<center>
+		<section>
+			<h2>Conversor de Bases</h2>
+			<div>
+				<div>
+					<label>Valor: </label><br>
+					<input id="caixa" type="text" size="40" maxlength="8">
+				</div><br>
+				<div>
+				  <input type="radio" name="RadioOps" id="Radio1" value="option1">
+				  <label for="Radio1">Decimal -> Binário</label>
+				  <input type="radio" name="RadioOps" id="Radio2" value="option2">
+				  <label for="Radio2">Decimal -> Hexadecimal</label>
+				  <input type="radio" name="RadioOps" id="Radio3" value="option3">
+				  <label for="Radio3">Binário -> Decimal</label>
+				  <input type="radio" name="RadioOps" id="Radio4" value="option4">
+				  <label for="Radio4">Hexadecimal -> Decimal</label>
+				</div>
+			</div>
+				<br>
+				<label>Resultado:</label>
+				<input type="text" id="resultado">
+				<input type="button" value="limpar" onclick="botao_limpar()">
+				<input type="button" value="executar" onclick="botao_executar()">
+				<script type="text/javascript">
+				
+				</center>
+
+					function botao_limpar(){				
+						document.getElementById("caixa").value = null;
+						document.getElementById("resultado").value = null;
+
+						var rdValue = document.getElementsByName("RadioOps");
+						for (var i = 0; i < rdValue.length; i++) {
+							if (rdValue[i].checked) {
+								document.getElementsByName("RadioOps")[i].checked = false;
+							}
+						}
+					}
+					function botao_executar(){
+						var valor1 = document.getElementById("caixa").value;
+						var rdValue = document.getElementsByName("RadioOps");
+						for (var i = 0; i < rdValue.length; i++) {
+							if(rdValue[i].checked){
+								value_aux = document.getElementsByName("RadioOps")[i].value;
+							}
+						}
+						switch(value_aux){
+							case "option1":
+								var resultado = (+valor1).toString(2);
+								document.getElementById("resultado").value = resultado;
+								break;
+							case "option2":
+								var resultado = (+valor1).toString(16);
+								document.getElementById("resultado").value = resultado;
+								break;
+							case "option3":
+								var resultado =	parseInt(valor1,2).toString(10);
+								document.getElementById("resultado").value = resultado;
+								break;
+							case "option4":
+								var resultado =	parseInt(valor1,16).toString(10);
+								document.getElementById("resultado").value = resultado;
+								break;
+						}
+					}
+				</script>
+
+		</section>
+		<footer align="center">
+			<br><br>
+		</footer>
+	</div>
+
+</body>
+</html>
