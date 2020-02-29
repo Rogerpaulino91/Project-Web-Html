@@ -1,128 +1,62 @@
+<!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+<head> 
+	<meta charset="UFT-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Doe Sangue! Doe Vida</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="shortcut icon" href="/image/img-post-3a.png" type="image/png">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=Swap" rel="stylesheet">
 </head>
-<style>
-    table,
-    th,
-    td {	
-        border: 1px solid black;
-        
-        text-align: center;
-        padding: 2px;
-    }
-</style>
 
 <body>
+	<header>
+		<h1>
+			<img width="893" height="931" src="/image/img-post-3a.png" alt="image de DOE">
 
-   <div style="border-bottom: 1px solid #000; text-align: center">
-        <h1>TABELA</h1>
-    </div>
+		<E><h1>
+	<h2>A Sua Doacao Importa</h2>
+	<p>Ate 3 Vidas com 1 Doacao</p>
+	<p>Mais de 38.000 doacao sao nescessarias todos os dias</p>
+	<button>Quero Ajudar!</button>	
+	</header>
 
-    <div style="margin-left: 10%; margin-top: 100px;">
-        <h3 style="margin-left: 27%;">Planilha de notas</h3>
-        <form action="http://localhost:8080/Projeto/PrimeiraServlet" method ="get">
-        <table>
-        	<tr style="background-color: gray;">
-	            <th></th>
-	            <th>Nome</th>
-	            <th>NOTA 1</th>
-	            <th>NOTA 2</th>
-	            <th>NOTA 3</th>
-	            <th>NOTA 4</th>
-	            <th>MÉDIA</th>
-	            <th>SITUAÇÃO</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td><input type="text" name="nome"></td>
-                <td><input type="text" name="valor1"></td>
-                <td><input type="text" name="valor1"></td>
-                <td><input type="text" name="valor1"></td>
-                <td><input type="text" name="valor1"></td>
-  				<td>-,--</td>
-                <td>-,--</td>
-            </tr>
-             <tr>
-                <td>2</td>
-               	<td><input type="text" name="nome"></td>
-                <td><input type="text" name="valor2"></td>
-                <td><input type="text" name="valor2"></td>
-                <td><input type="text" name="valor2"></td>
-                <td><input type="text" name="valor2"></td>
-                <td>-,--</td>
-                <td>-,--</td>
-            </tr>
-             <tr>
-                <td>3</td>
-              	<td><input type="text" name="nome"></td>
-                <td><input type="text" name="valor3"></td>
-                <td><input type="text" name="valor3"></td>
-                <td><input type="text" name="valor3"></td>
-                <td><input type="text" name="valor3"></td>
-                <td>-,--</td>
-                <td>-,--</td>
-            </tr>
-             <tr>
-             	<td>4</td>
-                <td><input type="text" name="nome"></td>
-                <td><input type="text" name="valor4"></td>
-                <td><input type="text" name="valor4"></td>
-                <td><input type="text" name="valor4"></td>
-                <td><input type="text" name="valor4"></td>
-                 <td>-,--</td>
-                <td>-,--</td>
-            </tr>
-             <tr>
-                <td>5</td>
-                <td><input type="text" name="nome"></td>
-                <td><input type="text" name="valor5"></td>
-                <td><input type="text" name="valor5"></td>
-                <td><input type="text" name="valor5"></td>
-                <td><input type="text" name="valor5"></td>
-                 <td>-,--</td>
-                 <td>-,--</td>
-            </tr>
-             <tr>
-                <td>6</td>
-                <td><input type="text" name="nome"></td>
-                <td><input type="text" name="valor6"></td>
-                <td><input type="text" name="valor6"></td>
-                <td><input type="text" name="valor6"></td>
-                <td><input type="text" name="valor6"></td>
-                 <td>-,--</td>
-                 <td>-,--</td>
-            </tr>
-            
-            <tr>
-                <td></td>
-                <td><b>MEDIA DE NOTAS =</b></td>
-                <td>-,--</td>
-                <td>-,--</td>
-                <td>-,--</td>
-                <td>-,--</td>
-              	<td>-,--</td>
-                <td>-,--</td>
-            </tr>
-        </table>
-       
-       <br />
-       
-       <label>Entre com a URL da página pessoal:</label> 
-       <input type="text" name="pagina" size="125">
-        <br />
-        <br />
-      	<input type="reset" value="Limpar" >
-		<input type="submit" value="Executar">
-		  
-        </form>        
-    </div>
+	<section class="form hide">
+		<h2>Entre na lista de doadores</h2>
+		<form action="/" method="POST">
+			<input type="text"
+					name="name"
+					placeholder="Nome Completo"><br>
+			<input type="text"
+					name="email"
+					placeholder="E-mail"><br>
+			<input type="text"
+					name="sangue"
+					placeholder="Tipo Sanguineo"><br>
+			<button>Quero Ajudar!</button>
+		</form>
+	</section>
+
+
+	<main> 
+		<h2>Ultimos	<span>doadores</span></h2>
+
+		<section class="doadores">
+
+			{% for doador in doadores %}
+				<div class="doador">
+					<div class="sangue">{{doador.sangue}}</div>
+				<p>{{doador.name}}</p>
+			</div>
+		{%endfor%}
+
+	</section>	
+	</main>
+	<footer>Com &#x!F60D; SamuelMonai </footer>
+	<script src="/js/script.js"></script>
 
 </body>
 
 </html>
-

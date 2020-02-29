@@ -1,0 +1,37 @@
+/*HEADER*/
+
+header button { 
+
+	margin-top: 16px;
+	padding: 8px 16px;
+	border-radius: 4px;
+	background-color: #ff4f4f;
+	color: white;
+	font-weight: bold; 
+	border: none;
+
+ }
+
+ .logo { 
+
+ 	whidt: 120px; 
+ 	margin: 70px 0;
+
+ }
+
+ 	header p { 
+ 		font-size: 14px;
+  }
+
+/*FORM*/
+
+	section.form { 
+		display: grid;
+		grid-template-columns: 1fr 1fr; 
+		grid-gap : 45px; 
+		background-color: #ff4f4f;
+		padding: 16px 64px; 
+		align-items: center;
+		border-radius: 6px;
+
+	 }
